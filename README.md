@@ -89,7 +89,7 @@ ElevenLabs needs an internet-accessible URL to hit your local machine.
 4. Copy the **Forwarding URL** (e.g., `https://a1b2-c3d4.ngrok-free.app`). 
 
 ### 5. ElevenLabs Dashboard Setup
-Please refer Voice Agents Setup Guide.pdf for more details. For each tool (`get_availability`, `create_appointment`, `log_patient_details`):
+Please refer **Voice Agents Setup Guide.pdf** for more details. For each tool (`get_availability`, `create_appointment`, `log_patient_details`):
 1. Go to the **Tools** section in ElevenLabs.
 2. If you are starting fresh, import the provided `.json` files in this repo (e.g., `get_availability.json`).
 3. Locate the `url` field inside the JSON.
