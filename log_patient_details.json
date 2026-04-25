@@ -1,0 +1,88 @@
+{
+  "type": "webhook",
+  "name": "log_patient_details",
+  "description": "Logs patient details, insurance details, patient questions/concerns, and appointment details at the very end of the call for a successful booking.",
+  "disable_interruptions": false,
+  "force_pre_tool_speech": "auto",
+  "tool_call_sound": null,
+  "tool_call_sound_behavior": "auto",
+  "tool_error_handling_mode": "auto",
+  "execution_mode": "immediate",
+  "api_schema": {
+    "url": "https://ppatil1979.app.n8n.cloud/webhook-test/chatbot", 
+    "method": "POST",
+    "path_params_schema": [],
+    "query_params_schema": [],
+    "request_body_schema": {
+      "id": "body",
+      "type": "object",
+      "description": "Necessary context for the `log_patient_details` tool:\n- \"patient_name\": patient name while mentioned on the call, \n- \"insurance_provider\": name of insurance provider. If no, then pass N/A\n- \"patient_question_concern\": any remarks by patients while booking an appointment \n- \"start_timestamp\": appointment time ISO-string \n- 'tool' is the tool that should be used and matched against on the agent handling\nthis request",
+      "properties": [
+        {
+          "id": "patient_question_concern",
+          "type": "string",
+          "value_type": "llm_prompt",
+          "description": "remarks on appointment provided by patient",
+          "dynamic_variable": "",
+          "constant_value": "",
+          "enum": null,
+          "is_system_provided": false,
+          "required": true
+        },
+        {
+          "id": "start_timestamp",
+          "type": "string",
+          "value_type": "llm_prompt",
+          "description": "Starting time stamp for which we are looking for booking",
+          "dynamic_variable": "",
+          "constant_value": "",
+          "enum": null,
+          "is_system_provided": false,
+          "required": true
+        },
+        {
+          "id": "patient_name",
+          "type": "string",
+          "value_type": "llm_prompt",
+          "description": "patient name while booking an appointment",
+          "dynamic_variable": "",
+          "constant_value": "",
+          "enum": null,
+          "is_system_provided": false,
+          "required": true
+        },
+        {
+          "id": "insurance_provider",
+          "type": "string",
+          "value_type": "llm_prompt",
+          "description": "- insurance provider details for appointment",
+          "dynamic_variable": "",
+          "constant_value": "",
+          "enum": null,
+          "is_system_provided": false,
+          "required": true
+        },
+        {
+          "id": "tool",
+          "type": "string",
+          "value_type": "constant",
+          "description": "",
+          "dynamic_variable": "",
+          "constant_value": "log_patient_details",
+          "enum": null,
+          "is_system_provided": false,
+          "required": true
+        }
+      ],
+      "required": false,
+      "value_type": "llm_prompt"
+    },
+    "request_headers": [],
+    "auth_connection": null
+  },
+  "assignments": [],
+  "response_timeout_secs": 20,
+  "dynamic_variables": {
+    "dynamic_variable_placeholders": {}
+  }
+}

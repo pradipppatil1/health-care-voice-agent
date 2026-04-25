@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Google OAuth credentials (NEVER commit these)
+token.json
+client_secret.json
+
+# Environment variables
+.env
+
+# Local database (conversation memory)
+app_memory.db
